@@ -1,5 +1,6 @@
 package com.taotao.service.member.api;
 
+import com.taotao.common.vo.ResponseBase;
 import com.taotao.service.member.entity.UserEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,4 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface IMemberService {
     @GetMapping("/getMember")
     UserEntity getMember(@RequestParam("name") String name);
+
+    @GetMapping("/getUserInfo")
+    ResponseBase getUserInfo();
 }

@@ -15,14 +15,13 @@
             <groupId>com.taotao.parent</groupId>
             <artifactId>api-order</artifactId>
             <version>1.0-SNAPSHOT</version>
-<!--            <scope>compile</scope>-->
         </dependency>
         <dependency>
             <groupId>com.taotao.parent</groupId>
             <artifactId>api-member</artifactId>
             <version>1.0-SNAPSHOT</version>
-<!--            <scope>compile</scope>-->
         </dependency>
+
     </dependencies>
 
 

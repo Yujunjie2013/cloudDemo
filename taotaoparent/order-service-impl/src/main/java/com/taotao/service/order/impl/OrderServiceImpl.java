@@ -1,5 +1,6 @@
 package com.taotao.service.order.impl;
 
+import com.taotao.common.vo.ResponseBase;
 import com.taotao.service.member.entity.UserEntity;
 import com.taotao.service.order.IOrderService;
 import com.taotao.service.order.feign.MemberServiceFeign;
@@ -24,5 +25,10 @@ public class OrderServiceImpl implements IOrderService {
     public String orderToMember(@RequestParam("name") String name) {
         UserEntity member = memberServiceFeign.getMember(name);
         return member == null ? "用户信息为空" : member.toString();
+    }
+
+    @GetMapping("/orderToMemberGetUserInfo")
+    public ResponseBase orderToMemberGetUserInfo() {
+        return memberServiceFeign.getUserInfo();
     }
 }
