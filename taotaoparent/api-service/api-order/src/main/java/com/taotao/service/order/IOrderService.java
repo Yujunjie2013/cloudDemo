@@ -16,8 +16,20 @@ public interface IOrderService {
 
     /**
      * 订单接口调用会员服务接口
+     *
      * @return 实体对象
      */
     @GetMapping("/orderToMemberGetUserInfo")
     ResponseBase orderToMemberGetUserInfo();
+
+    @GetMapping("/orderToMemberGetUserInfoForHystrix")
+    ResponseBase orderToMemberGetUserInfoForHystrix();
+
+    /**
+     * 获取订单详情
+     *
+     * @return
+     */
+    @GetMapping("/getOrderInfo")
+    ResponseBase getOrderInfo();
 }
