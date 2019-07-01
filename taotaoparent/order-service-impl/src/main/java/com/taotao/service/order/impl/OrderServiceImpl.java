@@ -7,9 +7,12 @@ import com.taotao.service.member.entity.UserEntity;
 import com.taotao.service.order.IOrderService;
 import com.taotao.service.order.feign.MemberServiceFeign;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 /**
  * @author Yune
@@ -23,10 +26,16 @@ public class OrderServiceImpl extends BaseApiService implements IOrderService {
     @Autowired
     private MemberServiceFeign memberServiceFeign;
 
+//    @Value("${com.appkey}")
+    private String appkey;
+    @Value("${com.appId}")
+    private String appId;
+
+
     @GetMapping("/orderToMember")
     public String orderToMember(@RequestParam("name") String name) {
         UserEntity member = memberServiceFeign.getMember(name);
-        return member == null ? "用户信息为空" : member.toString();
+        return member == null ? "用户信息为空" + appId + "-->appkey:" + appkey : member.toString() + "appId:" + appId + "---appkey:" + appkey;
     }
 
 

@@ -13,6 +13,7 @@
         <module>member-service-impl</module>
         <module>order-service-impl</module>
         <module>common</module>
+        <module>config</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
@@ -55,6 +56,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+<!--        配置中心-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
     </dependencies>
     <dependencyManagement>
