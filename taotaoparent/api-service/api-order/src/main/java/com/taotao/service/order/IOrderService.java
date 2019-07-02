@@ -32,4 +32,7 @@ public interface IOrderService {
      */
     @GetMapping("/getOrderInfo")
     ResponseBase getOrderInfo();
+
+    @GetMapping("/getError")
+    ResponseBase getError();
 }

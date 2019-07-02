@@ -34,4 +34,14 @@ public class MemberServiceImpl extends BaseApiService implements IMemberService 
         }
         return setResultSuccess();
     }
+
+    @Override
+    public ResponseBase getErrorInfo() {
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return setResultSuccess("超时时间是5s，我sleep了6s,如果成功就错了");
+    }
 }

@@ -1,6 +1,7 @@
 package com.taotao.service.order.feign;
 
 import com.taotao.service.member.api.IMemberService;
+import com.taotao.service.order.fallback.MemberServiceFeignFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @Version 1.0
  * @Description
  */
-@FeignClient("member-service-impl")
+
+@FeignClient(value = "member-service-impl", fallback = MemberServiceFeignFallback.class)
 public interface MemberServiceFeign extends IMemberService {
 }

@@ -17,4 +17,7 @@ public interface IMemberService {
 
     @GetMapping("/getUserInfo")
     ResponseBase getUserInfo();
+
+    @GetMapping("/getErrorInfo")
+    ResponseBase getErrorInfo();
 }
