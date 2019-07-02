@@ -26,7 +26,7 @@ public class OrderServiceImpl extends BaseApiService implements IOrderService {
     @Autowired
     private MemberServiceFeign memberServiceFeign;
 
-//    @Value("${com.appkey}")
+    @Value("${com.appkey}")
     private String appkey;
     @Value("${com.appId}")
     private String appId;
