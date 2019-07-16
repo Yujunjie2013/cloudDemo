@@ -9,6 +9,7 @@ import com.taotao.service.order.feign.MemberServiceFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,7 @@ import javax.validation.Valid;
  * @Description
  */
 @RestController
+@RefreshScope
 public class OrderServiceImpl extends BaseApiService implements IOrderService {
     //订单服务继承会员服务接口，用来实现feign客户端,减少重复接口代码
 //    @Qualifier("member-service-impl")
